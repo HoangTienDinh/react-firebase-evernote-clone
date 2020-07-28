@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import SidebarComponent from './sidebar/sidebar';
-import EditorComponent from './editor/editor';
+import SidebarComponent from "./sidebar/sidebar";
+import EditorComponent from "./editor/editor";
 
 const firebase = require("firebase");
 
@@ -17,8 +17,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='app-container'>
-        <SidebarComponent></SidebarComponent>
+      <div className="app-container">
+        <SidebarComponent
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+        ></SidebarComponent>
         <EditorComponent></EditorComponent>
       </div>
     );
@@ -34,7 +37,7 @@ class App extends React.Component {
           data["id"] = doc.id;
           return data;
         });
-        console.log(notes)
+        console.log(notes);
         this.setState({ notes: notes });
       });
   };
