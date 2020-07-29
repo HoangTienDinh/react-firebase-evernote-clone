@@ -64,7 +64,8 @@ class App extends React.Component {
       title: title,
       body: "",
     };
-    const newFromDB = await firebase.firestore.collection("notes").add({
+    const newFromDB = await firebase
+    .firestore().collection("notes").add({
       title: note.title,
       body: note.body,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
