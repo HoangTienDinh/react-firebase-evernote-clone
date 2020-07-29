@@ -15,6 +15,7 @@ class EditorComponent extends React.Component {
     };
   }
 
+  // these are built-in react hooks to identify change.
   componentDidMount = () => {
     this.setState({
       text: this.props.selectedNote.body,
@@ -24,14 +25,14 @@ class EditorComponent extends React.Component {
   };
 
   componentDidUpdate = () => {
-    if(this.props.selectedNote.id !== this.state.id) {
+    if (this.props.selectedNote.id !== this.state.id) {
       this.setState({
         text: this.props.selectedNote.body,
         title: this.props.selectedNote.title,
         id: this.props.selectedNote.id,
       });
     }
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -52,7 +53,10 @@ class EditorComponent extends React.Component {
   };
 
   update = debounce(() => {
-    console.log("UPDATING DB");
+    this.props.noteUpdate(this.state.id, {
+      title: this.state.title,
+      body: this.state.text,
+    });
   }, 1500);
 }
 
