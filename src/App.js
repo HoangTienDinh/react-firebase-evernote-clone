@@ -57,8 +57,11 @@ class App extends React.Component {
   selectNote = (note, index) =>
     this.setState({ selectedNoteIndex: index, selectedNote: note });
 
-  deleteNote = (note) => {
+  deleteNote = async (note) => {
     const noteIndex = this.state.notes.indexOf(note);
+    await this.setState({
+      notes: this.state.notes.filter((note) => note !== note),
+    });
     if (this.state.selectedNoteIndex === noteIndex) {
       this.setState({ selectedNoteIndex: null, selectedNote: null });
     } else {
