@@ -23,9 +23,14 @@ class SidebarItemComponent extends React.Component {
           >
             <ListItemText
               primary={note.title}
-              secondary={note.body.substring(0, 30) + "..."}
+              secondary={removeHTMLTags(note.body.substring(0, 30)) + "..."}
             ></ListItemText>
           </div>
+          <DeleteIcon
+            onClick={() => this.deleteNote(note)}
+            className={classes.deleteIcon}
+          ></DeleteIcon>
+          
         </ListItem>
       </div>
     );
