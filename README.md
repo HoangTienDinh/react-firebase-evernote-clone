@@ -1,7 +1,8 @@
 ## Evernote Clone
-A project practicing react while learning how to use firebase. Made use of Material-UI [Link to Material-UI](https://material-ui.com/)
- a component library to help build react projects faster, and react-quill to allow users text styling/editing [Link to react-quill](https://www.npmjs.com/package/react-quill)
+A project practicing react while learning how to use firebase. Made use of [Material-UI](https://material-ui.com/)
+ a component library to help build react projects faster, and [react-quill](https://www.npmjs.com/package/react-quill) to allow users text styling/editing 
 
+![Project Demo](https://github.com/HoangTienDinh/react-firebase-evernote-clone/blob/master/src/images/Evernote%20Clone.gif)
 
 ### `npm start`
 
